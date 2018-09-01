@@ -3,8 +3,40 @@
 ============================================================================ */
 
 .features {
-  background-color: $color-grey-light-2;
-
   /* Grid layout */
   grid-column: center-start / center-end;
+
+  margin: 15rem 0;
+
+  /* Pseudo sub grid layout for feature items */
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(25rem, 1fr));
+  grid-gap: 6rem;
+  align-items: start; // Makes the text paragraph start at the top
+}
+
+/* FEATURE COMPONENT
+============================================================================ */
+
+.feature {
+  /* Pseudo sub grid layout for feature item contents */
+  display: grid;
+  grid-template-columns: min-content 1fr;
+  grid-row-gap: 1.25rem;
+  grid-column-gap: 2.5rem;
+
+  &__icon {
+    fill: $color-primary;
+    width: 4.5rem;
+    height: 4.5rem;
+
+    grid-row: 1 / span 2;
+
+    /* Shifts the icon up */
+    transform: translateY(-0.75rem);
+  }
+
+  &__text {
+    font-size: 1.57rem;
+  }
 }
