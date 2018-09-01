@@ -1,0 +1,19 @@
+/* =========================================================================
+   TESTIMONIAL
+============================================================================ */
+
+.testimonial {
+  &__pictures {
+    background-color: $color-primary;
+
+    /* Grid layout */
+    grid-column: full-start / col-end 4;
+  }
+
+  &testimonial__content {
+    background-color: $color-grey-light-1;
+
+    /* Grid layout */
+    grid-column: col-start 5 / full-end;
+  }
+}

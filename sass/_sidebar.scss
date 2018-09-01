@@ -1,0 +1,11 @@
+/* =========================================================================
+   SIDEBAR NAVIGATION
+============================================================================ */
+
+.sidebar {
+  background-color: $color-primary;
+
+  /* Grid layout */
+  grid-column: sidebar-start / sidebar-end;
+  grid-row: 1 / -1;
+}

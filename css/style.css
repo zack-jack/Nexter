@@ -1,0 +1,106 @@
+/* =========================================================================
+   VARIABLES
+============================================================================ */
+/* COLOR VARIABLES
+============================================================================ */
+/* FONT VARIABLES
+============================================================================ */
+/* =========================================================================
+   VARIABLES
+============================================================================ */
+/* GLOBAL RESETS */
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit; }
+
+html {
+  box-sizing: border-box;
+  /* BASE FONT STYLES */
+  font-size: 62.5%; }
+
+body {
+  /* BASE FONT STYLES */
+  font-family: "Nunito", sans-serif;
+  color: #6d5d4b;
+  font-weight: 300;
+  line-height: 1.6rem; }
+
+/* BODY CONTAINER FOR GRID LAYOUT */
+.container {
+  /* GRID LAYOUT */
+  display: grid;
+  grid-template-rows: 80vh min-content 40vw repeat(3, min-content);
+  grid-template-columns: [sidebar-start] 8rem [sidebar-end full-start] minmax(6rem, 1fr) [center-start] repeat(8, [col-start] minmax(min-content, 14rem) [col-end]) [center-end] minmax(6rem, 1fr) [full-end]; }
+
+/* =========================================================================
+   SIDEBAR NAVIGATION
+============================================================================ */
+.sidebar {
+  background-color: #c69963;
+  /* Grid layout */
+  grid-column: sidebar-start / sidebar-end;
+  grid-row: 1 / -1; }
+
+/* =========================================================================
+   HEADER
+============================================================================ */
+.header {
+  background-color: #54483a;
+  /* Grid layout */
+  grid-column: full-start / col-end 6; }
+
+/* =========================================================================
+   REALTORS - OUR TEAM
+============================================================================ */
+.realtors {
+  background-color: #101d2c;
+  /* Grid layout */
+  grid-column: col-start 7 / full-end; }
+
+/* =========================================================================
+   FEATURES
+============================================================================ */
+.features {
+  background-color: #aaa;
+  /* Grid layout */
+  grid-column: center-start / center-end; }
+
+/* =========================================================================
+   TESTIMONIAL
+============================================================================ */
+.testimonial__pictures {
+  background-color: #c69963;
+  /* Grid layout */
+  grid-column: full-start / col-end 4; }
+
+.testimonialtestimonial__content {
+  background-color: #f9f7f6;
+  /* Grid layout */
+  grid-column: col-start 5 / full-end; }
+
+/* =========================================================================
+   HOMES
+============================================================================ */
+.homes {
+  background-color: #101d2c;
+  /* Grid layout */
+  grid-column: center-start / center-end; }
+
+/* =========================================================================
+   GALLERY
+============================================================================ */
+.gallery {
+  background-color: #54483a;
+  /* Grid layout */
+  grid-column: full-start / full-end; }
+
+/* =========================================================================
+   FOOTER
+============================================================================ */
+.footer {
+  background-color: #101d2c;
+  /* Grid layout */
+  grid-column: full-start / full-end; }
