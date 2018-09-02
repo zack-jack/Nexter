@@ -12,8 +12,8 @@ $color-secondary: #101d2c;
 $color-grey-light-1: #f9f7f6;
 $color-grey-light-2: #aaa;
 
-$color-grey-dark-1: #54483a;
-$color-grey-dark-2: #6d5d4b;
+$color-grey-dark-1: #4f4840;
+$color-grey-dark-2: #38332e;
 
 /* FONT VARIABLES
 ============================================================================ */
@@ -21,7 +21,29 @@ $font-primary: "Nunito", sans-serif;
 $font-display: "Josefin Sans", sans-serif;
 
 /* =========================================================================
-   VARIABLES
+   SPACING HELPERS
+============================================================================ */
+
+/* MARGIN HELPERS
+============================================================================ */
+
+/* MARGIN BOTTOM - SMALL */
+.mb-sm {
+  margin-bottom: 2rem;
+}
+
+/* MARGIN BOTTOM - MEDIUM */
+.mb-md {
+  margin-bottom: 3rem;
+}
+
+/* MARGIN BOTTOM - LARGE */
+.mb-lg {
+  margin-bottom: 4rem;
+}
+
+/* =========================================================================
+   BASE STYLES
 ============================================================================ */
 
 /* GLOBAL RESETS */
@@ -57,4 +79,29 @@ body {
     [sidebar-start] 8rem [sidebar-end full-start] minmax(6rem, 1fr)
     [center-start] repeat(8, [col-start] minmax(min-content, 14rem) [col-end])
     [center-end] minmax(6rem, 1fr) [full-end];
+}
+
+/* =========================================================================
+   BUTTON STYLES
+============================================================================ */
+
+.btn {
+  background-color: $color-primary;
+  color: $color-grey-light-1;
+  border: none;
+  border-radius: 0;
+  font-family: $font-display;
+  font-size: 1.5rem;
+  text-transform: uppercase;
+  padding: 1.8rem 3rem;
+  cursor: pointer;
+  transition: all 0.2s;
+
+  &:hover {
+    background-color: $color-primary-dark;
+  }
+
+  &:active {
+    transform: translate(0.2rem, 0.2rem);
+  }
 }

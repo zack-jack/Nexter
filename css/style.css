@@ -6,7 +6,24 @@
 /* FONT VARIABLES
 ============================================================================ */
 /* =========================================================================
-   VARIABLES
+   SPACING HELPERS
+============================================================================ */
+/* MARGIN HELPERS
+============================================================================ */
+/* MARGIN BOTTOM - SMALL */
+.mb-sm {
+  margin-bottom: 2rem; }
+
+/* MARGIN BOTTOM - MEDIUM */
+.mb-md {
+  margin-bottom: 3rem; }
+
+/* MARGIN BOTTOM - LARGE */
+.mb-lg {
+  margin-bottom: 4rem; }
+
+/* =========================================================================
+   BASE STYLES
 ============================================================================ */
 /* GLOBAL RESETS */
 *,
@@ -24,7 +41,7 @@ html {
 body {
   /* BASE FONT STYLES */
   font-family: "Nunito", sans-serif;
-  color: #6d5d4b;
+  color: #38332e;
   font-weight: 300;
   line-height: 2.25rem; }
 
@@ -36,6 +53,25 @@ body {
   grid-template-columns: [sidebar-start] 8rem [sidebar-end full-start] minmax(6rem, 1fr) [center-start] repeat(8, [col-start] minmax(min-content, 14rem) [col-end]) [center-end] minmax(6rem, 1fr) [full-end]; }
 
 /* =========================================================================
+   BUTTON STYLES
+============================================================================ */
+.btn {
+  background-color: #c69963;
+  color: #f9f7f6;
+  border: none;
+  border-radius: 0;
+  font-family: "Josefin Sans", sans-serif;
+  font-size: 1.5rem;
+  text-transform: uppercase;
+  padding: 1.8rem 3rem;
+  cursor: pointer;
+  transition: all 0.2s; }
+  .btn:hover {
+    background-color: #b28451; }
+  .btn:active {
+    transform: translate(0.2rem, 0.2rem); }
+
+/* =========================================================================
    TYPOGRAPHY
 ============================================================================ */
 /* HEADINGS
@@ -44,12 +80,26 @@ body {
   font-family: "Josefin Sans", sans-serif;
   font-weight: 400; }
 
+.heading-2 {
+  font-size: 4rem;
+  font-style: italic;
+  line-height: 5rem; }
+  .heading-2--light {
+    color: #f9f7f6; }
+  .heading-2--dark {
+    color: #4f4840; }
+
+.heading-3 {
+  font-size: 1.6rem;
+  color: #c69963;
+  text-transform: uppercase; }
+
 .heading-4 {
   font-size: 1.9rem; }
   .heading-4--light {
     color: #f9f7f6; }
   .heading-4--dark {
-    color: #54483a; }
+    color: #4f4840; }
 
 /* =========================================================================
    SIDEBAR NAVIGATION
@@ -64,7 +114,7 @@ body {
    HEADER
 ============================================================================ */
 .header {
-  background-color: #54483a;
+  background-color: #4f4840;
   /* Grid layout */
   grid-column: full-start / col-end 6; }
 
@@ -112,13 +162,42 @@ body {
 ============================================================================ */
 .testimonial__pictures {
   background-color: #c69963;
+  background-image: linear-gradient(to bottom, rgba(16, 29, 44, 0.85), rgba(16, 29, 44, 0.85)), url(../img/back.jpg);
   /* Grid layout */
-  grid-column: full-start / col-end 4; }
+  grid-column: full-start / col-end 4;
+  /* Grid container for the images */
+  display: grid;
+  grid-template-rows: repeat(12, 1fr);
+  grid-template-columns: repeat(12, 1fr);
+  align-items: center; }
 
-.testimonialtestimonial__content {
+.testimonial__img--1 {
+  width: 100%;
+  grid-row: 2 / 12;
+  grid-column: 2 / 12;
+  box-shadow: 0 2rem 5rem rgba(0, 0, 0, 0.2); }
+
+.testimonial__img--2 {
+  width: 115%;
+  grid-row: 2 / 6;
+  grid-column: 7 / 13;
+  z-index: 100;
+  box-shadow: 0 2rem 5rem rgba(0, 0, 0, 0.2); }
+
+.testimonial__content {
   background-color: #f9f7f6;
   /* Grid layout */
-  grid-column: col-start 5 / full-end; }
+  grid-column: col-start 5 / full-end;
+  padding: 6rem 8vw;
+  /* Flex container to align all content vertically centered */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start; }
+
+.testimonial__text {
+  font-size: 1.5rem;
+  font-style: italic; }
 
 /* =========================================================================
    HOMES
@@ -132,7 +211,7 @@ body {
    GALLERY
 ============================================================================ */
 .gallery {
-  background-color: #54483a;
+  background-color: #4f4840;
   /* Grid layout */
   grid-column: full-start / full-end; }
 
