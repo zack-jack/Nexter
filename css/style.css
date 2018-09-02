@@ -71,6 +71,24 @@ body {
   .btn:active {
     transform: translate(0.2rem, 0.2rem); }
 
+.nav-btn {
+  border: none;
+  border-radius: 0;
+  background-color: #f9f7f6;
+  height: 2px;
+  width: 4.5rem;
+  margin-top: 4rem; }
+  .nav-btn::before, .nav-btn::after {
+    background-color: #f9f7f6;
+    height: 2px;
+    width: 4.5rem;
+    content: "";
+    display: block; }
+  .nav-btn::before {
+    transform: translateY(-1.5rem); }
+  .nav-btn::after {
+    transform: translateY(1.3rem); }
+
 /* =========================================================================
    TYPOGRAPHY
 ============================================================================ */
@@ -108,7 +126,11 @@ body {
   background-color: #c69963;
   /* Grid layout */
   grid-column: sidebar-start / sidebar-end;
-  grid-row: 1 / -1; }
+  grid-row: 1 / -1;
+  /* Button in base file under button header */
+  /* Centers the nav button */
+  display: flex;
+  justify-content: center; }
 
 /* =========================================================================
    HEADER

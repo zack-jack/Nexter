@@ -8,4 +8,10 @@
   /* Grid layout */
   grid-column: sidebar-start / sidebar-end;
   grid-row: 1 / -1;
+
+  /* Button in base file under button header */
+
+  /* Centers the nav button */
+  display: flex;
+  justify-content: center;
 }
