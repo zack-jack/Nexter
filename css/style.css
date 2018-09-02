@@ -23,6 +23,16 @@
   margin-bottom: 4rem; }
 
 /* =========================================================================
+   MEDIA QUERY
+============================================================================ */
+/* RESPONSIVE BREAKPOINTS
+============================================================================ */
+/* Breakpoint largest - 1200px */
+/* Breakpoint large - 1000px */
+/* Breakpoint medium - 800px */
+/* Breakpoint small - 600px */
+/* Breakpoint smallest - 450px */
+/* =========================================================================
    BASE STYLES
 ============================================================================ */
 /* GLOBAL RESETS */
@@ -37,6 +47,9 @@ html {
   box-sizing: border-box;
   /* BASE FONT STYLES */
   font-size: 62.5%; }
+  @media only screen and (max-width: 75em) {
+    html {
+      font-size: 50%; } }
 
 body {
   /* BASE FONT STYLES */
@@ -51,6 +64,13 @@ body {
   display: grid;
   grid-template-rows: 80vh min-content 40vw repeat(3, min-content);
   grid-template-columns: [sidebar-start] 8rem [sidebar-end full-start] minmax(6rem, 1fr) [center-start] repeat(8, [col-start] minmax(min-content, 14rem) [col-end]) [center-end] minmax(6rem, 1fr) [full-end]; }
+  @media only screen and (max-width: 62.5em) {
+    .container {
+      grid-template-rows: 6rem 80vh min-content 40vw repeat(3, min-content);
+      grid-template-columns: [full-start] minmax(6rem, 1fr) [center-start] repeat(8, [col-start] minmax(min-content, 14rem) [col-end]) [center-end] minmax(6rem, 1fr) [full-end]; } }
+  @media only screen and (max-width: 50em) {
+    .container {
+      grid-template-rows: 6rem calc(100vh - 6rem); } }
 
 /* =========================================================================
    BUTTON STYLES
@@ -88,6 +108,17 @@ body {
     transform: translateY(-1.5rem); }
   .nav-btn::after {
     transform: translateY(1.3rem); }
+  @media only screen and (max-width: 62.5em) {
+    .nav-btn {
+      margin-top: 0;
+      margin-right: 3rem;
+      background-color: #c69963; }
+      .nav-btn::before, .nav-btn::after {
+        background-color: #c69963; }
+      .nav-btn::before {
+        transform: translateY(-1.2rem); }
+      .nav-btn::after {
+        transform: translateY(1rem); } }
 
 /* =========================================================================
    TYPOGRAPHY
@@ -136,6 +167,13 @@ body {
   /* Centers the nav button */
   display: flex;
   justify-content: center; }
+  @media only screen and (max-width: 62.5em) {
+    .sidebar {
+      grid-column: 1 / -1;
+      grid-row: 1 / 2;
+      justify-content: flex-end;
+      align-items: center;
+      background-color: #f9f7f6; } }
 
 /* =========================================================================
    HEADER
@@ -152,8 +190,18 @@ body {
   grid-column: full-start / col-end 6;
   /* Pseudo sub grid layout for header contents */
   display: grid;
-  grid-template-rows: 1fr min-content 6rem 1fr;
+  grid-template-rows: 1fr min-content minmax(6rem, min-content) 1fr;
+  grid-template-columns: minmax(max-content);
   grid-row-gap: 1.5rem; }
+  @media only screen and (max-width: 50em) {
+    .header {
+      grid-column: 1 / -1; } }
+  @media only screen and (max-width: 37.5em) {
+    .header {
+      padding: 5rem; } }
+  @media only screen and (max-width: 28.125em) {
+    .header {
+      padding: 2.5rem; } }
   .header__logo {
     height: 4rem;
     justify-self: center; }
@@ -178,10 +226,18 @@ body {
     grid-template-columns: repeat(3, 1fr);
     grid-column-gap: 6rem;
     justify-items: center;
-    padding-top: 3rem; }
+    padding-top: 3rem;
+    align-items: center; }
+    @media only screen and (max-width: 28.125em) {
+      .header__seen-on-logos {
+        padding-top: 1.8rem; } }
     .header__seen-on-logos img {
-      height: 3rem;
+      max-height: 3rem;
+      max-width: 100;
       filter: opacity(0.5); }
+      @media only screen and (max-width: 28.125em) {
+        .header__seen-on-logos img {
+          max-height: 2rem; } }
 
 /* =========================================================================
    REALTORS - OUR TEAM
@@ -196,16 +252,37 @@ body {
   justify-content: center;
   justify-items: center;
   grid-row-gap: 2rem; }
+  @media only screen and (max-width: 50em) {
+    .realtors {
+      grid-column: 1 / -1; } }
+  @media only screen and (max-width: 28.125em) {
+    .realtors {
+      padding-top: 5rem; } }
   .realtors__list {
     display: grid;
     grid-template-columns: min-content max-content;
     grid-column-gap: 2rem;
     grid-row-gap: 5vh;
     align-items: center; }
+    @media only screen and (max-width: 50em) {
+      .realtors__list {
+        grid-template-columns: repeat(3, min-content max-content);
+        padding: 4rem 3rem; } }
+    @media only screen and (max-width: 37.5em) {
+      .realtors__list {
+        grid-template-columns: min-content max-content;
+        grid-row-gap: 4rem;
+        padding: 3rem; } }
   .realtors__img {
     width: 8rem;
     border-radius: 50%;
     display: block; }
+  @media only screen and (max-width: 50em) {
+    .realtors__details {
+      margin-right: 3rem; } }
+  @media only screen and (max-width: 37.5em) {
+    .realtors__details {
+      margin-right: 0; } }
   .realtors__contact {
     text-transform: uppercase;
     color: #aaa; }
@@ -226,6 +303,9 @@ body {
   grid-template-columns: repeat(auto-fit, minmax(25rem, 1fr));
   grid-gap: 6rem;
   align-items: start; }
+  @media only screen and (max-width: 28.125em) {
+    .features {
+      margin: 10rem 0 6rem; } }
 
 /* FEATURE COMPONENT
 ============================================================================ */
@@ -258,12 +338,22 @@ body {
   grid-template-rows: repeat(12, 1fr);
   grid-template-columns: repeat(12, 1fr);
   align-items: center; }
+  @media only screen and (max-width: 50em) {
+    .testimonial__pictures {
+      grid-column: 1 / -1;
+      padding: 6rem; } }
 
 .testimonial__img--1 {
   width: 100%;
   grid-row: 2 / 12;
   grid-column: 2 / 12;
   box-shadow: 0 2rem 5rem rgba(0, 0, 0, 0.2); }
+  @media only screen and (max-width: 50em) {
+    .testimonial__img--1 {
+      grid-column: 1 / 6;
+      grid-row: 1 / -1;
+      height: 100%;
+      width: auto; } }
 
 .testimonial__img--2 {
   width: 115%;
@@ -271,6 +361,10 @@ body {
   grid-column: 7 / 13;
   z-index: 100;
   box-shadow: 0 2rem 5rem rgba(0, 0, 0, 0.2); }
+  @media only screen and (max-width: 50em) {
+    .testimonial__img--2 {
+      grid-row: 1 / -1;
+      width: 100%; } }
 
 .testimonial__content {
   background-color: #f9f7f6;
@@ -282,6 +376,10 @@ body {
   flex-direction: column;
   justify-content: center;
   align-items: flex-start; }
+  @media only screen and (max-width: 50em) {
+    .testimonial__content {
+      grid-column: 1 / -1;
+      grid-row: 5 / 6; } }
 
 .testimonial__text {
   font-size: 1.5rem;
@@ -453,3 +551,6 @@ body {
   margin-left: auto;
   text-align: center;
   width: 60%; }
+  @media only screen and (max-width: 28.125em) {
+    .copyright {
+      width: 100%; } }

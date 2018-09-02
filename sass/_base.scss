@@ -43,6 +43,28 @@ $font-display: "Josefin Sans", sans-serif;
 }
 
 /* =========================================================================
+   MEDIA QUERY
+============================================================================ */
+
+/* RESPONSIVE BREAKPOINTS
+============================================================================ */
+
+/* Breakpoint largest - 1200px */
+$bp-largest: 75em;
+
+/* Breakpoint large - 1000px */
+$bp-large: 62.5em;
+
+/* Breakpoint medium - 800px */
+$bp-medium: 50em;
+
+/* Breakpoint small - 600px */
+$bp-small: 37.5em;
+
+/* Breakpoint smallest - 450px */
+$bp-smallest: 28.125em;
+
+/* =========================================================================
    BASE STYLES
 ============================================================================ */
 
@@ -60,6 +82,10 @@ html {
 
   /* BASE FONT STYLES */
   font-size: 62.5%; // 10px/16px = 62.5% -> 1rem = 10px
+
+  @media only screen and (max-width: $bp-largest) {
+    font-size: 50%; // 8px/16px = 50% -> 1rem = 8px
+  }
 }
 
 body {
@@ -79,6 +105,18 @@ body {
     [sidebar-start] 8rem [sidebar-end full-start] minmax(6rem, 1fr)
     [center-start] repeat(8, [col-start] minmax(min-content, 14rem) [col-end])
     [center-end] minmax(6rem, 1fr) [full-end];
+
+  @media only screen and (max-width: $bp-large) {
+    grid-template-rows: 6rem 80vh min-content 40vw repeat(3, min-content);
+    grid-template-columns:
+      [full-start] minmax(6rem, 1fr)
+      [center-start] repeat(8, [col-start] minmax(min-content, 14rem) [col-end])
+      [center-end] minmax(6rem, 1fr) [full-end];
+  }
+
+  @media only screen and (max-width: $bp-medium) {
+    grid-template-rows: 6rem calc(100vh - 6rem);
+  }
 }
 
 /* =========================================================================
@@ -129,5 +167,24 @@ body {
 
   &::after {
     transform: translateY(1.3rem);
+  }
+
+  @media only screen and (max-width: $bp-large) {
+    margin-top: 0;
+    margin-right: 3rem;
+    background-color: $color-primary;
+
+    &::before,
+    &::after {
+      background-color: $color-primary;
+    }
+
+    &::before {
+      transform: translateY(-1.2rem);
+    }
+
+    &::after {
+      transform: translateY(1rem);
+    }
   }
 }

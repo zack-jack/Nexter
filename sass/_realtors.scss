@@ -15,18 +15,47 @@
   justify-items: center;
   grid-row-gap: 2rem;
 
+  @media only screen and (max-width: $bp-medium) {
+    grid-column: 1 / -1;
+  }
+
+  @media only screen and (max-width: $bp-smallest) {
+    padding-top: 5rem;
+  }
+
   &__list {
     display: grid;
     grid-template-columns: min-content max-content;
     grid-column-gap: 2rem;
     grid-row-gap: 5vh;
     align-items: center;
+
+    @media only screen and (max-width: $bp-medium) {
+      grid-template-columns: repeat(3, min-content max-content);
+      padding: 4rem 3rem;
+    }
+
+    @media only screen and (max-width: $bp-small) {
+      grid-template-columns: min-content max-content;
+      grid-row-gap: 4rem;
+      padding: 3rem;
+    }
   }
 
   &__img {
     width: 8rem;
     border-radius: 50%;
     display: block;
+  }
+
+  &__details {
+    @media only screen and (max-width: $bp-medium) {
+      margin-right: 3rem;
+    }
+
+    @media only screen and (max-width: $bp-small) {
+      margin-right: 0;
+    }
   }
 
   &__contact {

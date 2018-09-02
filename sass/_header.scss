@@ -20,8 +20,21 @@
 
   /* Pseudo sub grid layout for header contents */
   display: grid;
-  grid-template-rows: 1fr min-content 6rem 1fr;
+  grid-template-rows: 1fr min-content minmax(6rem, min-content) 1fr;
+  grid-template-columns: minmax(max-content);
   grid-row-gap: 1.5rem;
+
+  @media only screen and (max-width: $bp-medium) {
+    grid-column: 1 / -1;
+  }
+
+  @media only screen and (max-width: $bp-small) {
+    padding: 5rem;
+  }
+
+  @media only screen and (max-width: $bp-smallest) {
+    padding: 2.5rem;
+  }
 
   &__logo {
     height: 4rem;
@@ -58,10 +71,20 @@
     grid-column-gap: 6rem;
     justify-items: center;
     padding-top: 3rem;
+    align-items: center;
+
+    @media only screen and (max-width: $bp-smallest) {
+      padding-top: 1.8rem;
+    }
 
     img {
-      height: 3rem;
+      max-height: 3rem;
+      max-width: 100;
       filter: opacity(0.5);
+
+      @media only screen and (max-width: $bp-smallest) {
+        max-height: 2rem;
+      }
     }
   }
 }
