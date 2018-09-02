@@ -4,7 +4,43 @@
 
 .realtors {
   background-color: $color-secondary;
+  padding: 3rem;
 
   /* Grid layout */
   grid-column: col-start 7 / full-end;
+
+  display: grid;
+  align-content: center;
+  justify-content: center;
+  justify-items: center;
+  grid-row-gap: 2rem;
+
+  &__list {
+    display: grid;
+    grid-template-columns: min-content max-content;
+    grid-column-gap: 2rem;
+    grid-row-gap: 5vh;
+    align-items: center;
+  }
+
+  &__img {
+    width: 8rem;
+    border-radius: 50%;
+    display: block;
+  }
+
+  &__contact {
+    text-transform: uppercase;
+    color: $color-grey-light-2;
+  }
+
+  &__contact:link,
+  &__contact:visited {
+    text-decoration: none;
+  }
+
+  &__contact:hover,
+  &__contact:active {
+    color: $color-primary;
+  }
 }
