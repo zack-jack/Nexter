@@ -333,5 +333,35 @@ body {
 ============================================================================ */
 .footer {
   background-color: #101d2c;
+  padding: 8rem;
   /* Grid layout */
   grid-column: full-start / full-end; }
+  .footer .nav {
+    list-style: none;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr));
+    grid-gap: 2rem;
+    align-items: center; }
+    .footer .nav__link:link, .footer .nav__link:visited {
+      font-size: 1.4rem;
+      color: #f9f7f6;
+      text-decoration: none;
+      font-family: "Josefin Sans", sans-serif;
+      text-transform: uppercase;
+      text-align: center;
+      padding: 1.5rem;
+      display: block;
+      transition: all 0.2s;
+      background-color: rgba(249, 247, 246, 0.05); }
+    .footer .nav__link:hover, .footer .nav__link:active {
+      background-color: rgba(249, 247, 246, 0.1);
+      transform: translateY(-3px); }
+
+.copyright {
+  font-size: 1.4rem;
+  color: #aaa;
+  margin-top: 6rem;
+  margin-right: auto;
+  margin-left: auto;
+  text-align: center;
+  width: 60%; }
